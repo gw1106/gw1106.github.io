@@ -1,9 +1,8 @@
-# H_Group
 
 ---
 layout: single
 title:  "Welcome to H_Group!"
-date:   2021-03-27 10:56:38 +0900
+date:   2021-03-29 10:56:38 +0900
 categories: jekyll update
 ---
 
