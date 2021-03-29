@@ -1,11 +1,11 @@
-#### H_Group
-
 ---
-layout: posts
+layout: single
 title:  "Closest pair of points!"
 date:   2021-03-30 22:00:00 +0900
 categories: jekyll update
 ---
+#### H_Group
+
 
 ## 과제: _분할-정복_ 방법으로 최근접 점의 쌍 찾기
 
