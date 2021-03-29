@@ -174,9 +174,8 @@ public class Closet_2 {
 
 
 ### 참조
-[https://ko.wikipedia.org/wiki/%EC%B5%9C%EA%B7%BC%EC%A0%91_%EC%A0%90%EC%8C%8D_%EB%AC%B8%EC%A0%9C]
-[https://dudri63.github.io/2019/01/19/algo8/]
-
+[https://ko.wikipedia.org/wiki/%EC%B5%9C%EA%B7%BC%EC%A0%91_%EC%A0%90%EC%8C%8D_%EB%AC%B8%EC%A0%9C](https://ko.wikipedia.org/wiki/%EC%B5%9C%EA%B7%BC%EC%A0%91_%EC%A0%90%EC%8C%8D_%EB%AC%B8%EC%A0%9C)
+[https://dudri63.github.io/2019/01/19/algo8/](https://dudri63.github.io/2019/01/19/algo8/)
 
 
 
