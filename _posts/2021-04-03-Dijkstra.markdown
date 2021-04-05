@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Closest pair of points!"
+title:  "Dijkstra!"
 date:   2021-03-30 22:00:00 +0900
 categories: jekyll update
 ---
