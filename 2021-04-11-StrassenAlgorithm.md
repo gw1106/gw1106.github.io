@@ -48,12 +48,12 @@ public class Strassen
             R[0][0] = A[0][0] * B[0][0];
         else
         {
-            int[][] A11 = new int[n/2][n/2];             		// 첫번째 행렬에서 소행렬들의 크기를 정의해줌
+            int[][] A11 = new int[n/2][n/2];             		    // 첫번째 행렬에서 소행렬들의 크기를 정의해줌
             int[][] A12 = new int[n/2][n/2];
             int[][] A21 = new int[n/2][n/2];
             int[][] A22 = new int[n/2][n/2];
 
-            int[][] B11 = new int[n/2][n/2];             		// 두번째 행렬에서 소행렬들의 크기를 정의해줌
+            int[][] B11 = new int[n/2][n/2];             		    // 두번째 행렬에서 소행렬들의 크기를 정의해줌
             int[][] B12 = new int[n/2][n/2];
             int[][] B21 = new int[n/2][n/2];
             int[][] B22 = new int[n/2][n/2];
@@ -64,7 +64,7 @@ public class Strassen
             divideMatrics(A, A21, n/2, 0);
             divideMatrics(A, A22, n/2, n/2);
 
-                                                             			 // 두번째 행렬을 4개의 소행렬로 나눈다
+                                                             		 // 두번째 행렬을 4개의 소행렬로 나눈다
             divideMatrics(B, B11, 0 , 0);
             divideMatrics(B, B12, 0 , n/2);
             divideMatrics(B, B21, n/2, 0);
@@ -73,21 +73,21 @@ public class Strassen
 
             //슈트라센 알고리즘에서 사용하는 A와 B로 이루어진 새로은 행렬 M을 다음과 같이 적용시킨다
          
-            int [][] M1 = multiply(add(A11, A22), add(B11, B22));         //  M1 = (A11 + A22)(B11 + B22)
+            int [][] M1 = multiply(add(A11, A22), add(B11, B22));            //  M1 = (A11 + A22)(B11 + B22)
             int [][] M2 = multiply(add(A21, A22), B11);                      //  M2 = (A21 + A22) B11
             int [][] M3 = multiply(A11, sub(B12, B22));                      //  M3 = A11 (B12 - B22)
             int [][] M4 = multiply(A22, sub(B21, B11));                      //  M4 = A22 (B21 - B11)
             int [][] M5 = multiply(add(A11, A12), B22);                      //  M5 = (A11 + A12) B22
-            int [][] M6 = multiply(sub(A21, A11), add(B11, B12));         //  M6 = (A21 - A11) (B11 + B12)
-            int [][] M7 = multiply(sub(A12, A22), add(B21, B22));         //  M7 = (A12 - A22) (B21 + B22)
+            int [][] M6 = multiply(sub(A21, A11), add(B11, B12));            //  M6 = (A21 - A11) (B11 + B12)
+            int [][] M7 = multiply(sub(A12, A22), add(B21, B22));            //  M7 = (A12 - A22) (B21 + B22)
 
 
             // AxB=C인 행렬 C를 행렬 M으로 다음과 같이 표현한다
            
-            int [][] C11 = add(sub(add(M1, M4), M5), M7);    		// C11 = M1 + M4 - M5 + M7
+            int [][] C11 = add(sub(add(M1, M4), M5), M7);    		    // C11 = M1 + M4 - M5 + M7
             int [][] C12 = add(M3, M5);                            		// C12 = M3 + M5
             int [][] C21 = add(M2, M4);                            		// C21 = M2 + M4
-            int [][] C22 = add(sub(add(M1, M3), M2), M6);   		//  C22 = M1 - M2 + M3 + M6
+            int [][] C22 = add(sub(add(M1, M3), M2), M6);   		    //  C22 = M1 - M2 + M3 + M6
 
             // 각 AxB의 연산이 끝난 소행렬들을 결과를 나타내는 행렬 R행렬로 합쳐준다.
             put(C11, R, 0 , 0);
@@ -95,7 +95,7 @@ public class Strassen
             put(C21, R, n/2, 0);
             put(C22, R, n/2, n/2);
         }
-        return R;                                             		 //결과값을 반환
+        return R;                                             		    //결과값을 반환
     }
 
     // 두 행렬을 더해주는 메소드
@@ -147,13 +147,13 @@ public class Strassen
         System.out.println("행렬크기를 입력하세요 (n) :");
         int N = scan.nextInt();
 
-        System.out.println("첫 번째 행렬의 값들을 입력하세요");        // 첫 번째 행렬 A에 대한 값들을 입력받음
+        System.out.println("첫 번째 행렬의 값들을 입력하세요");           // 첫 번째 행렬 A에 대한 값들을 입력받음
         int[][] A = new int[N][N];
         for (int i = 0; i < N; i++)
             for (int j = 0; j < N; j++)
                 A[i][j] = scan.nextInt();
 
-        System.out.println("두 번째 행렬의 값들을 입력하세요1");       // 두 번째 행렬 B에 대한 값들을 입력받음
+        System.out.println("두 번째 행렬의 값들을 입력하세요1");          // 두 번째 행렬 B에 대한 값들을 입력받음
         int[][] B = new int[N][N];
         for (int i = 0; i < N; i++)
             for (int j = 0; j < N; j++)
@@ -161,7 +161,7 @@ public class Strassen
 
         int[][] C = s.multiply(A, B);                            		// 슈트라센 알고리즘에 두 행렬을 대입
 
-        System.out.println("두 행렬의 곱 : ");                    		// 두 행렬의 곱 결과 출력
+        System.out.println("두 행렬의 곱 : ");                    	   // 두 행렬의 곱 결과 출력
         for (int i = 0; i < N; i++)
         {
             for (int j = 0; j < N; j++)
@@ -188,13 +188,13 @@ public static void main (String[] args)
         System.out.println("행렬크기를 입력하세요 (n) :");
         int N = scan.nextInt();
 
-        System.out.println("첫 번째 행렬의 값들을 입력하세요");        // 첫 번째 행렬 A에 대한 값들을 입력받음
+        System.out.println("첫 번째 행렬의 값들을 입력하세요");          // 첫 번째 행렬 A에 대한 값들을 입력받음
         int[][] A = new int[N][N];
         for (int i = 0; i < N; i++)
             for (int j = 0; j < N; j++)
                 A[i][j] = scan.nextInt();
 
-        System.out.println("두 번째 행렬의 값들을 입력하세요1");       // 두 번째 행렬 B에 대한 값들을 입력받음
+        System.out.println("두 번째 행렬의 값들을 입력하세요1");         // 두 번째 행렬 B에 대한 값들을 입력받음
         int[][] B = new int[N][N];
         for (int i = 0; i < N; i++)
             for (int j = 0; j < N; j++)
@@ -202,7 +202,7 @@ public static void main (String[] args)
 
         int[][] C = s.multiply(A, B);                            		// 슈트라센 알고리즘에 두 행렬을 대입
 
-        System.out.println("두 행렬의 곱 : ");                     	// 두 행렬의 곱 결과 출력
+        System.out.println("두 행렬의 곱 : ");                     	   // 두 행렬의 곱 결과 출력
         for (int i = 0; i < N; i++)
         {
             for (int j = 0; j < N; j++)
@@ -222,7 +222,7 @@ public static void main (String[] args)
 
 ```java
   
-public int[][] multiply(int[][] A, int[][] B)        			// 두 개의 nxn 정사각행렬의 곱을 계산하는 메소드 생성
+public int[][] multiply(int[][] A, int[][] B)        			    // 두 개의 nxn 정사각행렬의 곱을 계산하는 메소드 생성
     {
         int n = A.length;                               			// 2차원 배열의 행렬의 길이를 n에 저장( nxn 정사각행렬을 만드는데 필요)
         int[][] R = new int[n][n];                       			// 슈트라센 알고리즘을 적용하고 난 후의 결과값을 저장할 Result행렬 생성
@@ -231,23 +231,23 @@ public int[][] multiply(int[][] A, int[][] B)        			// 두 개의 nxn 정사
             R[0][0] = A[0][0] * B[0][0];
         else
         {
-            int[][] A11 = new int[n/2][n/2];             		// 첫번째 행렬에서 소행렬들의 크기를 정의해줌
+            int[][] A11 = new int[n/2][n/2];             		    // 첫번째 행렬에서 소행렬들의 크기를 정의해줌
             int[][] A12 = new int[n/2][n/2];
             int[][] A21 = new int[n/2][n/2];
             int[][] A22 = new int[n/2][n/2];
 
-            int[][] B11 = new int[n/2][n/2];             		// 두번째 행렬에서 소행렬들의 크기를 정의해줌
+            int[][] B11 = new int[n/2][n/2];             		    // 두번째 행렬에서 소행렬들의 크기를 정의해줌
             int[][] B12 = new int[n/2][n/2];
             int[][] B21 = new int[n/2][n/2];
             int[][] B22 = new int[n/2][n/2];
 
-                                                              			 // 첫번째 행렬을 4개의 소행렬로 나눈다
+                                                              	    // 첫번째 행렬을 4개의 소행렬로 나눈다
             divideMatrics(A, A11, 0 , 0);
             divideMatrics(A, A12, 0 , n/2);
             divideMatrics(A, A21, n/2, 0);
             divideMatrics(A, A22, n/2, n/2);
 
-                                                             			 // 두번째 행렬을 4개의 소행렬로 나눈다
+                                                             		 // 두번째 행렬을 4개의 소행렬로 나눈다
             divideMatrics(B, B11, 0 , 0);
             divideMatrics(B, B12, 0 , n/2);
             divideMatrics(B, B21, n/2, 0);
@@ -256,21 +256,21 @@ public int[][] multiply(int[][] A, int[][] B)        			// 두 개의 nxn 정사
 
             //슈트라센 알고리즘에서 사용하는 A와 B로 이루어진 새로은 행렬 M을 다음과 같이 적용시킨다
          
-            int [][] M1 = multiply(add(A11, A22), add(B11, B22));         //  M1 = (A11 + A22)(B11 + B22)
+            int [][] M1 = multiply(add(A11, A22), add(B11, B22));            //  M1 = (A11 + A22)(B11 + B22)
             int [][] M2 = multiply(add(A21, A22), B11);                      //  M2 = (A21 + A22) B11
             int [][] M3 = multiply(A11, sub(B12, B22));                      //  M3 = A11 (B12 - B22)
             int [][] M4 = multiply(A22, sub(B21, B11));                      //  M4 = A22 (B21 - B11)
             int [][] M5 = multiply(add(A11, A12), B22);                      //  M5 = (A11 + A12) B22
-            int [][] M6 = multiply(sub(A21, A11), add(B11, B12));         //  M6 = (A21 - A11) (B11 + B12)
-            int [][] M7 = multiply(sub(A12, A22), add(B21, B22));         //  M7 = (A12 - A22) (B21 + B22)
+            int [][] M6 = multiply(sub(A21, A11), add(B11, B12));            //  M6 = (A21 - A11) (B11 + B12)
+            int [][] M7 = multiply(sub(A12, A22), add(B21, B22));            //  M7 = (A12 - A22) (B21 + B22)
 
 
             // AxB=C인 행렬 C를 행렬 M으로 다음과 같이 표현한다
            
-            int [][] C11 = add(sub(add(M1, M4), M5), M7);    		// C11 = M1 + M4 - M5 + M7
+            int [][] C11 = add(sub(add(M1, M4), M5), M7);    		    // C11 = M1 + M4 - M5 + M7
             int [][] C12 = add(M3, M5);                            		// C12 = M3 + M5
             int [][] C21 = add(M2, M4);                            		// C21 = M2 + M4
-            int [][] C22 = add(sub(add(M1, M3), M2), M6);   		//  C22 = M1 - M2 + M3 + M6
+            int [][] C22 = add(sub(add(M1, M3), M2), M6);   		    //  C22 = M1 - M2 + M3 + M6
 
             // 각 AxB의 연산이 끝난 소행렬들을 결과를 나타내는 행렬 R행렬로 합쳐준다.
             put(C11, R, 0 , 0);
@@ -278,7 +278,7 @@ public int[][] multiply(int[][] A, int[][] B)        			// 두 개의 nxn 정사
             put(C21, R, n/2, 0);
             put(C22, R, n/2, n/2);
         }
-        return R;                                              		//결과값을 반환
+        return R;                                              		    //결과값을 반환
     }
    
 ```
