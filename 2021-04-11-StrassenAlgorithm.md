@@ -9,12 +9,14 @@
 정의에 따라 n×n 크기의 두 행렬을 곱하면 O(n3)의 시간이 소요되지만 이 알고리즘은 대략 O(n2.807)의 시간이 소요된다.
 
 ![https://lh3.googleusercontent.com/proxy/rp2TidyXYjY8-AkUFv1jGdk6apHE5R3faccC6G00J9GYw2UhwcDwhufuD0aWKtwJ9ZskL31YMNcCZFklfKJE2Pub3p9WsWoF6TI3MAiKOfAU-hty80Ei2GLhGxJ6jT4tKxyHvCm9qRu9jCrVf7G1RFSAVvP6cg02_G3UjY9YHS8SRYsUUGr6b4JibphGsB11_YlyUFgUa0i9](https://lh3.googleusercontent.com/proxy/rp2TidyXYjY8-AkUFv1jGdk6apHE5R3faccC6G00J9GYw2UhwcDwhufuD0aWKtwJ9ZskL31YMNcCZFklfKJE2Pub3p9WsWoF6TI3MAiKOfAU-hty80Ei2GLhGxJ6jT4tKxyHvCm9qRu9jCrVf7G1RFSAVvP6cg02_G3UjY9YHS8SRYsUUGr6b4JibphGsB11_YlyUFgUa0i9)
-A, B, C를 같은 크기의 정사각행렬 네 개로 나눈다.
 
+A, B, C를 같은 크기의 정사각행렬 네 개로 나눈다.
 이 과정에서는 필요한 연산의 수가 줄어 들지 않는다. 여전히 Ci,j 행렬을 계산하려면 여덟 번의 곱셈과 네 번의 덧셈이 필요하다.
 
 이제 다음과 같은 행렬을 정의한다.
+
 ![https://t1.daumcdn.net/cfile/tistory/2413793851BE771502](https://t1.daumcdn.net/cfile/tistory/2413793851BE771502)
+
 이 Mk 행렬들은 Ci,j 행렬을 표현하는 데 쓰이는데, 이 행렬들을 계산하는 데는 일곱 번의 곱셈(각 변수마다 한 번씩)과 10번의 덧셈이 필요하다. 
 이제 Ci,j 행렬은 다음과 같이 표현할 수 있다.
 
