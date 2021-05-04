@@ -46,6 +46,7 @@ public class BubbleSort {
 
 
 
+
 ## 2. 선택정렬
 ![https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif](https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif)
 선택 정렬은 제자리 정렬 알고리즘의 하나로, 다음과 같은 순서로 이루어진다.
@@ -104,6 +105,7 @@ public class Selection {
 ### 2. (2) 결과
 
 ![선택정렬 (2)](https://user-images.githubusercontent.com/81409594/116986563-e51a9400-ad08-11eb-995f-d41c43184cca.png)
+
 
 
 
@@ -183,6 +185,7 @@ public class InsertionSort {
 ### 3. (2) 결과
 
 ![삽입정렬 (2)](https://user-images.githubusercontent.com/81409594/116986590-ed72cf00-ad08-11eb-9570-64e3168b0083.png)
+
 
 
 
@@ -272,7 +275,7 @@ public class ShellSort {
 
 
 
-## 6.참조 
+## 5.참조 
 [https://ko.wikipedia.org/wiki/%EA%B1%B0%ED%92%88_%EC%A0%95%EB%A0%AC](https://ko.wikipedia.org/wiki/%EA%B1%B0%ED%92%88_%EC%A0%95%EB%A0%AC)
 
 [https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)
